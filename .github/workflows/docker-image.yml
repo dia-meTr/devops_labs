@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Pull Docker image
-        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-task:latest
+        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my_app:latest
 
       - name: Create Docker Network
         run: docker network create app
