@@ -27,7 +27,7 @@ jobs:
         run: docker network create app
 
       - name: Run Docker image
-        run: docker run --network app --network-alias app -p 80:80 -d ${{ secrets.DOCKERHUB_USERNAME }}/my-app
+        run: docker run --network app --network-alias app -p 80:80 -d ${{ secrets.DOCKERHUB_USERNAME }}/my_app
 
       - name: Wait for application start
         run: docker run --network app willwill/wait-for-it app:80 -t 10 -s -- echo "App is running"
